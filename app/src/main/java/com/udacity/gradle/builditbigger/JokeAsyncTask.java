@@ -2,7 +2,9 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.androidjokes.AndroidJokesActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -38,7 +40,8 @@ public class JokeAsyncTask extends AsyncTask<Context, Void, String> {
         try {
             return myApiService.getJoke().execute().getData();
         }catch (IOException e){
-            return e.getMessage();
+            Log.i("IOException", String.valueOf(e));
+            return "";
         }
     }
 
