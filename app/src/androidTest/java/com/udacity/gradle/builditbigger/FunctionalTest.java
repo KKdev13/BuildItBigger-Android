@@ -28,7 +28,10 @@ public class FunctionalTest
             joke = jokeAsyncTask.get(30, TimeUnit.SECONDS);
         } catch(Exception e)
         {
-            e.printStackTrace();
+            if (joke == null || joke.isEmpty()) {
+                e.printStackTrace();
+            }
+
         }
 
         assertNotNull(joke);

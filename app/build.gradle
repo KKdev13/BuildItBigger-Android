@@ -38,11 +38,6 @@ android {
         free {
             applicationId "com.udacity.gradle.builditbigger.free"
             dimension 'version'
-            dependencies{
-                implementation 'com.google.api-client:google-api-client:1.23.0'
-                implementation 'com.google.http-client:google-http-client-android:1.23.0'
-                implementation 'com.google.code.findbugs:jsr305:3.0.1'
-            }
         }
         paid {
             applicationId "com.udacity.gradle.builditbigger.paid"
@@ -52,6 +47,9 @@ android {
 }
 
 dependencies {
+    freeImplementation 'com.google.api-client:google-api-client:1.23.0'
+    freeImplementation 'com.google.http-client:google-http-client-android:1.23.0'
+    freeImplementation 'com.google.code.findbugs:jsr305:3.0.1'
     implementation project(':javaJokes')
     implementation project(':androidjokes')
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -41,6 +41,7 @@ public class JokeAsyncTask extends AsyncTask<Context, Void, String> {
             return myApiService.getJoke().execute().getData();
         }catch (IOException e){
             Log.i("IOException", String.valueOf(e));
+            //return e.getMessage();
             return "";
         }
     }
