@@ -1,12 +1,14 @@
 package com.udacity.gradle.builditbigger;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.text.TextUtils;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.concurrent.TimeUnit;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
 
 /**
@@ -28,9 +30,11 @@ public class FunctionalTest
             joke = jokeAsyncTask.get(30, TimeUnit.SECONDS);
         } catch(Exception e)
         {
-            if (joke == null || joke.isEmpty()) {
+            /*if (joke == null || joke.isEmpty()) {
                 e.printStackTrace();
-            }
+            }*/
+            assertFalse(TextUtils.isEmpty(joke));
+            e.printStackTrace();
 
         }
 
